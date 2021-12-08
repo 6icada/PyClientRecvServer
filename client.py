@@ -15,9 +15,14 @@ def Connect():
     PORT = 4444
     
     # Connecting to the server
-    Client_Socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    Client_Socket.connect((HOST, PORT))
-    
+    try:
+        Client_Socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        Client_Socket.connect((HOST, PORT))
+    except:
+        # ERROR MSG
+        print('[ERROR]: Can\'t find server...')
+        exit()
+
     # Closing connection
     Client_Socket.close()
     exit()
