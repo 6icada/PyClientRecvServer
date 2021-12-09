@@ -29,9 +29,9 @@ def MakeSocket():
         while True:
             # Adding vars
             client, address = Server_Socket.accept()
-            
-            # Adding client to clients list
-            clients.append(client)
+
+            # Adding address(client's address) to clients list
+            clients.append(address)
 
             # MSG when client joins
             print(f'[CLIENT]: {address} connected to the server!')
@@ -41,3 +41,4 @@ def MakeSocket():
 
 # Calling functions
 MakeSocket()
+
